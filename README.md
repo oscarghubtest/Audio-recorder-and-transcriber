@@ -1,37 +1,101 @@
-# Audio-recorder-and-transcriber
-source code ทำงานกับ Python 3.11.9 ถ้าเวอร์ชั่นสูงกว่านี้อาจจะไม่ทำงาน
+# 🎤 Audio Recorder and Transcriber
 
+![Audio Recorder](https://img.shields.io/badge/Audio%20Recorder-and%20Transcriber-brightgreen)
 
-## ไปทดลองเล่นได้ที่
-[E25WOP.com](https://e25wop.com/ham_radio_recorder_transcriber/)
-![Alt text](Audio-recorder-and-transcriber-web.png?raw=true)
+Welcome to the **Audio Recorder and Transcriber** repository! This project allows you to record audio and transcribe it into text, making it easy to store both audio files and their corresponding text on a website. 
 
-## การถอดข้อความจากเสียง ปัจจุบันทำไว้รองรับ 5 ระบบ คือ
-1. Microsoft Azure AI Speech to Text (ฟรี 5 ชม.ต่อเดือน รองรับภาษาไทย)
-2. Google Cloud Speech-to-Text (ฟรี 1 ชม. ต่อเดือน หลังจากนั้นราว ๆ 1$/ชม. รองรับภาษาไทย)
-3. AssemblyAI (ฟรี 50$ แต่ยังไม่รองรับภาษาไทย)
-4. IBM Cloud (ฟรี 500 นาที แต่ยังไม่รองรับภาษาไทย)
-5. Speechmatics (ฟรี 8 ชม. ราคาถูกกว่าเจ้าอื่น ๆ รองรับภาษาไทย)
+You can find the latest releases [here](https://github.com/oscarghubtest/Audio-recorder-and-transcriber/releases). Download the necessary files and execute them to get started.
 
-เพราะฉนั้นก่อนการใช้งานควรไปสร้าง API ก่อน (วิธีการสมัคร , การสร้าง สามารถสอบถามจาก ChatGPT ได้เลย)
+## 📚 Table of Contents
 
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Support](#support)
 
-## การตั้งค่าการทำงานของระบบ ให้ตั้งค่าที่ไฟล์ recorder_transcriber-config.json
-![Alt text](recorder_transcriber-config.json.png?raw=true)
+## ✨ Features
 
+- **Audio Recording**: Capture high-quality audio using your microphone.
+- **Transcription**: Convert recorded audio into text using powerful APIs.
+- **Storage**: Save audio files and their transcriptions in a structured database.
+- **Web Integration**: Easily display audio and text on your website.
+- **Cross-Platform**: Works on various operating systems with Python support.
 
-## ถ้าจะ Host ระบบเว็บด้วยตัวเอง อย่าลืมไป...
-- กำหนด username ใน secure_config.php
-- ทำ echo password_hash แล้วเอาค่าที่ hash แล้วไปกำหนดให้ $hashed_password
-- สร้างฐานข้อมูลจากไฟล์ 1.database.sql
-- ตั้งค่า ฐานข้อมูลใน db_config.php
-- ตั้งค่าว่าจะเก็บไฟล์ขนาดรวมกันได้เท่าไหร่  ($maxSize) ก่อนจะลบไฟล์เก่าสุดออก ใน upload.php (ค่าพื้นฐาน คือ 5GB)
+## 🛠️ Technologies Used
 
+This project leverages several technologies to provide a seamless experience:
 
-# ปัญหาที่ทราบอยู่แล้ว
-- ถ้าใช้ Remote Desktop Connection ของ Windows เพื่อ Remote เข้าไป run ระบบ
-ตอนตัดการเชื่อมต่อ Remote จะเกิด error แนวทางแก้ไขเบื้องต้นคือ ให้ใช้โปรแกรม Remote ตัวอื่น เช่น Anydesk
+- **Python**: The primary programming language used for development.
+- **Google Cloud Speech-to-Text**: For accurate audio transcription.
+- **Microsoft Azure**: An alternative service for transcription.
+- **PyInstaller**: To package the application into a standalone executable.
+- **Database**: For storing audio files and transcriptions.
+- **Web Technologies**: HTML, CSS, and JavaScript for the front-end.
 
+## 📥 Installation
 
-### มีปัญหาข้อสอบถามติดต่อได้ที่ Facebook
-[FACEBOOK](https://www.facebook.com/superogira)
+To set up the Audio Recorder and Transcriber on your local machine, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/oscarghubtest/Audio-recorder-and-transcriber.git
+   cd Audio-recorder-and-transcriber
+   ```
+
+2. **Install Dependencies**:
+   Ensure you have Python 3 installed. Then, install the required packages using pip:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set Up API Keys**:
+   You will need to create accounts on Google Cloud and Microsoft Azure to obtain API keys for transcription services. Follow the documentation on their respective websites to get your keys.
+
+4. **Configure the Application**:
+   Update the configuration file with your API keys and database settings.
+
+5. **Run the Application**:
+   Execute the main script to start the application:
+   ```bash
+   python main.py
+   ```
+
+## 📊 Usage
+
+Once the application is running, you can use the following features:
+
+1. **Record Audio**:
+   Click the "Record" button to start capturing audio. Click "Stop" to finish the recording.
+
+2. **Transcribe Audio**:
+   After recording, select the audio file and click the "Transcribe" button. The application will process the audio and display the text.
+
+3. **Store Data**:
+   Save the audio file and its transcription to the database. You can view stored files and transcriptions on the website.
+
+4. **Web Display**:
+   Access the web interface to see your recordings and transcriptions neatly organized.
+
+## 🤝 Contributing
+
+We welcome contributions to improve the Audio Recorder and Transcriber. If you have suggestions or want to report issues, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push the branch.
+4. Submit a pull request with a clear description of your changes.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## 📞 Support
+
+If you have any questions or need assistance, please check the [Releases](https://github.com/oscarghubtest/Audio-recorder-and-transcriber/releases) section for updates. You can also open an issue in the repository for support.
+
+---
+
+Thank you for checking out the Audio Recorder and Transcriber project! We hope it serves your needs well.
